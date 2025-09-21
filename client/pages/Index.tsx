@@ -16,24 +16,32 @@ function Hero() {
       </div>
       <div className="container grid items-center gap-10 lg:grid-cols-2">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-foreground/70 bg-background/60 backdrop-blur">
-            <span className="size-2 rounded-full bg-primary" /> Student Executive Body
-          </div>
-          <h1 className="mt-4 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-            The Voice of Students, The Space for Aspirations
-          </h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-xl">
-            BEM FILKOM is the student executive body empowering student voices, fostering academic growth,
-            and driving impactful social movements across campus and beyond.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild className="shadow bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link to="/about">Learn More About BEM</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/divisions">Get Involved</Link>
-            </Button>
-          </div>
+          <Reveal y={10} delay={50}>
+            <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-foreground/70 bg-background/60 backdrop-blur">
+              <span className="size-2 rounded-full bg-primary" /> Student Executive Body
+            </div>
+          </Reveal>
+          <Reveal y={18} delay={120}>
+            <h1 className="mt-4 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+              The Voice of Students, The Space for Aspirations
+            </h1>
+          </Reveal>
+          <Reveal y={18} delay={200}>
+            <p className="mt-4 text-lg text-muted-foreground max-w-xl">
+              BEM FILKOM is the student executive body empowering student voices, fostering academic growth,
+              and driving impactful social movements across campus and beyond.
+            </p>
+          </Reveal>
+          <Reveal y={18} delay={260}>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild className="shadow bg-accent text-accent-foreground hover:bg-accent/90">
+                <Link to="/about">Learn More About BEM</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link to="/divisions">Get Involved</Link>
+              </Button>
+            </div>
+          </Reveal>
         </div>
         <div className="relative">
           <div className="aspect-square w-full max-w-md mx-auto rounded-2xl bg-gradient-to-br from-primary/20 via-accent/20 to-transparent p-[2px]">
