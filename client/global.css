@@ -12,39 +12,45 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 230 16% 14%;
+    /* Global background: #003366 (HSL: 210 100% 20%) and white text */
+    --background: 210 100% 20%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 230 16% 14%;
+    /* Surfaces */
+    --card: 210 100% 18%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 16% 14%;
+    --popover: 210 100% 18%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Brand: FILKOM blue */
-    --primary: 225 73% 47%;
+    /* Brand */
+    --primary: 210 100% 20%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 230 16% 14%;
+    --secondary: 210 30% 28%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 225 13% 42%;
+    --muted: 210 30% 24%;
+    --muted-foreground: 0 0% 92%;
 
-    /* Accent: warm amber */
+    /* Accent for CTAs */
     --accent: 42 94% 55%;
     --accent-foreground: 230 16% 14%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 14% 90%;
-    --input: 220 14% 90%;
-    --ring: 225 73% 47%;
+    --border: 210 40% 35%;
+    --input: 210 40% 35%;
+    --ring: 210 100% 55%;
 
     --radius: 0.75rem;
 
-    /* Sidebar (unused defaults but kept consistent) */
+    /* Spotlight defaults (updated via JS) */
+    --spotlight-x: 50vw;
+    --spotlight-y: 40vh;
+
+    /* Sidebar defaults (kept for compatibility) */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -56,33 +62,33 @@
   }
 
   .dark {
-    --background: 230 16% 9%;
-    --foreground: 210 40% 98%;
+    --background: 210 100% 12%;
+    --foreground: 0 0% 100%;
 
-    --card: 230 16% 9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 100% 10%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 230 16% 9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 100% 10%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 225 73% 47%;
+    --primary: 210 100% 20%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 18%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 30% 20%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 30% 18%;
+    --muted-foreground: 0 0% 92%;
 
     --accent: 42 94% 55%;
     --accent-foreground: 230 16% 14%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 225 73% 47%;
+    --border: 210 35% 26%;
+    --input: 210 35% 26%;
+    --ring: 210 100% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -102,5 +108,22 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Aesthetic deep-blue layered background */
+    background-image:
+      radial-gradient(1200px 600px at 10% -20%, hsl(210 100% 30% / 0.25), transparent 60%),
+      radial-gradient(1000px 500px at 90% 120%, hsl(210 100% 10% / 0.35), transparent 60%),
+      linear-gradient(180deg, hsl(210 100% 22%), hsl(210 100% 18%));
+    background-attachment: fixed, fixed, fixed;
+  }
+
+  /* Global moving light following the cursor */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(400px circle at var(--spotlight-x) var(--spotlight-y), rgba(255,255,255,0.14), rgba(255,255,255,0) 60%);
+    mix-blend-mode: screen;
+    z-index: 0;
   }
 }
