@@ -1,6 +1,7 @@
 import { PropsWithChildren, useEffect } from "react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
+import CursorGlow from "@/components/effects/CursorGlow";
 
 export default function Layout({ children }: PropsWithChildren) {
   useEffect(() => {
