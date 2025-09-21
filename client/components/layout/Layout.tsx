@@ -5,34 +5,40 @@ import SiteFooter from "./SiteFooter";
 export default function Layout({ children }: PropsWithChildren) {
   useEffect(() => {
     const root = document.documentElement as HTMLElement;
-    let raf = 0;
-    let mx = window.innerWidth / 2;
-    let my = window.innerHeight / 2;
 
-    const update = (x: number, y: number) => {
-      mx = x;
-      my = y;
-      if (!raf) {
-        raf = requestAnimationFrame(() => {
-          root.style.setProperty("--spotlight-x", `${mx}px`);
-          root.style.setProperty("--spotlight-y", `${my}px`);
-          raf = 0;
-        });
+    let raf = 0;
+    let tx = window.innerWidth / 2;
+    let ty = window.innerHeight / 2;
+    let cx = tx;
+    let cy = ty;
+
+    const loop = () => {
+      // Smooth follow (lerp)
+      cx += (tx - cx) * 0.12;
+      cy += (ty - cy) * 0.12;
+      root.style.setProperty("--spotlight-x", `${cx}px`);
+      root.style.setProperty("--spotlight-y", `${cy}px`);
+      raf = requestAnimationFrame(loop);
+    };
+
+    const onPointer = (e: PointerEvent) => {
+      tx = e.clientX;
+      ty = e.clientY;
+    };
+    const onTouch = (e: TouchEvent) => {
+      const t = e.touches[0];
+      if (t) {
+        tx = t.clientX;
+        ty = t.clientY;
       }
     };
 
-    const onPointer = (e: PointerEvent) => update(e.clientX, e.clientY);
-    const onTouch = (e: TouchEvent) => {
-      const t = e.touches[0];
-      if (t) update(t.clientX, t.clientY);
-    };
+    root.style.setProperty("--spotlight-x", `${cx}px`);
+    root.style.setProperty("--spotlight-y", `${cy}px`);
 
     window.addEventListener("pointermove", onPointer, { passive: true });
     window.addEventListener("touchmove", onTouch, { passive: true });
-
-    // init position center
-    root.style.setProperty("--spotlight-x", `${mx}px`);
-    root.style.setProperty("--spotlight-y", `${my}px`);
+    raf = requestAnimationFrame(loop);
 
     return () => {
       window.removeEventListener("pointermove", onPointer as any);
