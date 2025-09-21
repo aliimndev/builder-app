@@ -114,10 +114,14 @@ function Programs() {
     <Section>
       <div className="container">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Main Programs</h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Initiatives focused on advocacy, learning, creativity, and service to empower every student.
-          </p>
+          <Reveal y={16}>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Main Programs</h2>
+          </Reveal>
+          <Reveal y={16} delay={100}>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Initiatives focused on advocacy, learning, creativity, and service to empower every student.
+            </p>
+          </Reveal>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it) => (
