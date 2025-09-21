@@ -26,7 +26,7 @@ function Hero() {
             and driving impactful social movements across campus and beyond.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild className="shadow">
+            <Button asChild className="shadow bg-accent text-accent-foreground hover:bg-accent/90">
               <Link to="/about">Learn More About BEM</Link>
             </Button>
             <Button asChild variant="outline">
@@ -195,7 +195,7 @@ function FinalCTA() {
           Step forward, lead with purpose, and leave your mark on campus and community.
         </p>
         <div className="mt-8 flex items-center justify-center gap-3">
-          <Button asChild className="shadow">
+          <Button asChild className="shadow bg-accent text-accent-foreground hover:bg-accent/90">
             <Link to="/divisions">Join Now</Link>
           </Button>
           <Button asChild variant="outline">
