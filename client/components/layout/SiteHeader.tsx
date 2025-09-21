@@ -79,7 +79,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <Button asChild className="shadow-sm">
+          <Button asChild className="shadow-sm bg-accent text-accent-foreground hover:bg-accent/90">
             <Link to="/divisions">Join BEM</Link>
           </Button>
         </div>
