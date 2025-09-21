@@ -10,7 +10,7 @@ export default function PlaceholderPage({ title }: { title: string }) {
           This page is a placeholder. Tell me what content you want here and I will build it.
         </p>
         <div className="mt-8">
-          <Link to="/" className="text-primary underline-offset-4 hover:underline">Back to Home</Link>
+          <Link to="/" className="text-accent underline-offset-4 hover:underline">Back to Home</Link>
         </div>
       </div>
     </section>
