@@ -6,6 +6,8 @@ import CursorGlow from "@/components/effects/CursorGlow";
 export default function Layout({ children }: PropsWithChildren) {
   useEffect(() => {
     const root = document.documentElement as HTMLElement;
+    const prevCursor = document.body.style.cursor;
+    document.body.style.cursor = "none";
 
     let raf = 0;
     let tx = window.innerWidth / 2;
@@ -42,6 +44,7 @@ export default function Layout({ children }: PropsWithChildren) {
     raf = requestAnimationFrame(loop);
 
     return () => {
+      document.body.style.cursor = prevCursor;
       window.removeEventListener("pointermove", onPointer as any);
       window.removeEventListener("touchmove", onTouch as any);
       if (raf) cancelAnimationFrame(raf);
