@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import Reveal from "@/components/effects/Reveal";
 
 function Section({ className, children }: React.PropsWithChildren<{ className?: string }>) {
   return <section className={cn("py-16 md:py-24", className)}>{children}</section>;
