@@ -116,16 +116,5 @@
     background-attachment: fixed, fixed, fixed;
   }
 
-  /* Global moving light following the cursor */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(140px circle at var(--spotlight-x) var(--spotlight-y), rgba(255,255,255,0.28), rgba(255,255,255,0) 60%),
-      radial-gradient(360px circle at var(--spotlight-x) var(--spotlight-y), rgba(255,255,255,0.16), rgba(255,255,255,0) 65%);
-    mix-blend-mode: screen;
-    z-index: 0;
-  }
+  /* Cursor glow overlay is rendered via React (CursorGlow.tsx) */
 }
