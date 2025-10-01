@@ -12,37 +12,39 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    /* Global background: #003366 (HSL: 210 100% 20%) and white text */
-    --background: 210 100% 20%;
+    /* Teal-centric theme to match the provided emblem */
     --foreground: 0 0% 100%;
 
+    /* Background: deep teal-blue */
+    --background: 200 36% 16%; /* ~#1f3740 */
+
     /* Surfaces */
-    --card: 210 100% 18%;
+    --card: 196 34% 18%; /* dark teal surface */
     --card-foreground: 0 0% 100%;
 
-    --popover: 210 100% 18%;
+    --popover: 196 34% 18%;
     --popover-foreground: 0 0% 100%;
 
     /* Brand */
-    --primary: 210 100% 20%;
+    --primary: 186 49% 45%; /* teal ~#3DB6BF */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 30% 28%;
+    --secondary: 195 45% 28%; /* deep teal ring */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 30% 24%;
+    --muted: 195 22% 26%;
     --muted-foreground: 0 0% 92%;
 
-    /* Accent for CTAs */
-    --accent: 42 94% 55%;
-    --accent-foreground: 230 16% 14%;
+    /* Accent: warm laurel orange/brown */
+    --accent: 25 72% 52%; /* ~#D68A3A */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 6 78% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 40% 35%;
-    --input: 210 40% 35%;
-    --ring: 210 100% 55%;
+    --border: 195 26% 30%;
+    --input: 195 26% 30%;
+    --ring: 186 49% 45%;
 
     --radius: 0.75rem;
 
@@ -50,54 +52,54 @@
     --spotlight-x: 50vw;
     --spotlight-y: 40vh;
 
-    /* Sidebar defaults (kept for compatibility) */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 196 34% 18%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 186 49% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 72% 52%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 195 26% 30%;
+    --sidebar-ring: 186 49% 45%;
   }
 
   .dark {
-    --background: 210 100% 12%;
+    --background: 200 36% 12%;
     --foreground: 0 0% 100%;
 
-    --card: 210 100% 10%;
+    --card: 196 34% 14%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 210 100% 10%;
+    --popover: 196 34% 14%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 210 100% 20%;
+    --primary: 186 49% 48%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 30% 20%;
+    --secondary: 195 45% 26%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 30% 18%;
+    --muted: 195 22% 20%;
     --muted-foreground: 0 0% 92%;
 
-    --accent: 42 94% 55%;
-    --accent-foreground: 230 16% 14%;
+    --accent: 25 72% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 63% 31%;
+    --destructive: 6 70% 44%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 35% 26%;
-    --input: 210 35% 26%;
-    --ring: 210 100% 55%;
+    --border: 195 22% 26%;
+    --input: 195 22% 26%;
+    --ring: 186 49% 48%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 196 34% 14%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 186 49% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 25 72% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 195 22% 26%;
+    --sidebar-ring: 186 49% 48%;
   }
 }
 
@@ -108,11 +110,11 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Aesthetic deep-blue layered background */
+    /* Teal diagonal gradient like the provided background */
     background-image:
-      radial-gradient(1200px 600px at 10% -20%, hsl(210 100% 30% / 0.25), transparent 60%),
-      radial-gradient(1000px 500px at 90% 120%, hsl(210 100% 10% / 0.35), transparent 60%),
-      linear-gradient(180deg, hsl(210 100% 22%), hsl(210 100% 18%));
+      radial-gradient(1000px 600px at 8% -10%, hsl(186 49% 46% / 0.18), transparent 60%),
+      radial-gradient(1000px 600px at 92% 120%, hsl(200 36% 14% / 0.35), transparent 60%),
+      linear-gradient(135deg, hsl(197 40% 28%), hsl(202 32% 20%));
     background-attachment: fixed, fixed, fixed;
   }
 

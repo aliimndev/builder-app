@@ -56,7 +56,7 @@ function Hero() {
                 <rect x="20" y="20" width="160" height="160" rx="20" fill="url(#grad)" />
                 <path d="M50 130c24-8 32-40 40-40s16 32 40 40" stroke="white" strokeWidth="6" strokeLinecap="round" fill="none" />
                 <circle cx="100" cy="70" r="8" fill="white" />
-                <text x="100" y="170" textAnchor="middle" fontSize="12" fill="white" fontWeight="700">BEM FILKOM</text>
+                <text x="100" y="170" textAnchor="middle" fontSize="12" fill="white" fontWeight="700">Masukin Gambar</text>
               </svg>
             </div>
           </div>
